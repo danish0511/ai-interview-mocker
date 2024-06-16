@@ -12,12 +12,13 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { chatSession } from "@/utils/GeminiAIModal";
-import { Loader, LoaderCircle } from "lucide-react";
+import { LoaderCircle } from "lucide-react";
 import { db } from "@/utils/db";
 import { MockInterview } from "@/utils/schema";
 import { v4 as uuidv4 } from "uuid";
 import { useUser } from "@clerk/nextjs";
 import moment from "moment";
+import { useRouter } from "next/navigation";
 
 function AddNewInterview() {
   const [openDialog, setOpenDialog] = useState(false);
@@ -27,6 +28,7 @@ function AddNewInterview() {
   const [loading, setLoading] = useState(false);
   const [jsonResp, setJsonResp] = useState([]);
   const { user } = useUser();
+  const router = useRouter();
 
   const onSubmit = async (e) => {
     setLoading(true)
@@ -56,6 +58,7 @@ function AddNewInterview() {
       console.log("Inserted ID: ", resp);
       if(resp) {
         setOpenDialog(false);
+        router.push('/dashboard/interview/'+resp[0]?.mockId)
       }
     }
     else {

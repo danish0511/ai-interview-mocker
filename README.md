@@ -36,7 +36,6 @@ NEXT_PUBLIC_INTERVIEW_QUESTION_COUNT=
 NEXT_PUBLIC_INFORMATION=
 NEXT_PUBLIC_QUESTION_NOTE=
 ```
-Replace the placeholder values with your actual Convex & Clerk credentials. You can obtain these credentials by signing up on the Convex and Clerk websites
 
 #### Running the project
 ```

@@ -1,4 +1,4 @@
-## 🤸 Quick Start
+## Quick Start
 Follow these steps to set up the project locally on your machine.
 
 Prerequisites
@@ -37,8 +37,35 @@ NEXT_PUBLIC_INFORMATION=
 NEXT_PUBLIC_QUESTION_NOTE=
 ```
 
+
+### Updating package.json
+
+Update following things in package.json file:
+```
+"scripts":{
+    "db:push": "npx drizzle-kit push",
+    "db:studio": "npx drizzle-kit studio"
+}
+
+"dependencies":{
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+}
+```
+
 #### Running the project
+
+In one terminal write:
 ```
 npm run dev
 ```
+
+In other terminal connect with backend using:
+```
+npm run db:push
+npm run db:studio
+```
+
 Open [http://localhost:3000](http://localhost:3000) in your browser to view the project.
+
+Open [local.drizzle.studio](local.drizzle.studio) in your browser for backend.
